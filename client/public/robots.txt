@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# The sitemap is generated dynamically by the API (includes services and projects).
+# Set the final domain here, or proxy /sitemap.xml to the API (see README).
+Sitemap: https://hyxc.ae/sitemap.xml

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-sand font-sans text-navy antialiased; }
+  h1, h2, h3, h4 { @apply font-serif; }
+  ::selection { background: #D6B34E; color: #09152B; }
+  :focus-visible { outline: 2px solid #D6B34E; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section-y { @apply py-16 sm:py-24; }
+  .eyebrow { @apply inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark; }
+  .eyebrow::before { content: ''; @apply h-px w-8 bg-gold; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-gold { @apply bg-gold-gradient text-navy shadow-gold hover:-translate-y-0.5 hover:brightness-105; }
+  .btn-outline { @apply border border-white/70 text-white hover:border-gold hover:text-gold; }
+  .btn-outline-dark { @apply border border-navy/30 text-navy hover:border-gold-dark hover:text-gold-dark; }
+  .input { @apply w-full rounded-lg border border-navy/15 bg-white px-4 py-3 text-sm text-navy placeholder:text-navy/40 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30; }
+  .input-dark { @apply border-white/15 bg-white/5 text-white placeholder:text-white/40 focus:border-gold; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-navy/70; }
+  .label-dark { @apply text-white/70; }
+  .gold-rule { @apply mx-auto h-px w-24 bg-gold-gradient; }
+}
