@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "npm install && npm install --prefix client",
-  "buildCommand": "npm run build --prefix client",
+  "buildCommand": "node scripts/seed-on-build.mjs && npm run build --prefix client",
   "outputDirectory": "client/dist",
   "functions": {
     "api/index.js": { "maxDuration": 30 }
