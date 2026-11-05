@@ -96,6 +96,9 @@ Everything runs on free tiers. The website and the API deploy as **one Vercel pr
 3. Free-plan per-file limits: images 10 MB, videos 100 MB (enforced in the admin upload with a clear message). Images are delivered as WebP/AVIF automatically.
 
 ### Step 3: Seed the database (once, from your computer)
+**Shortcut:** inside `server`, run `npm install` then `npm run setup`. It asks for your Atlas/Cloudinary values and an admin login, generates `JWT_SECRET`, writes `.env`, seeds the database, and creates `vercel-env.txt` that you paste into Vercel > Settings > Environment Variables (paste into the first Key box and it fills every variable). Both files are git-ignored; keep them private.
+
+Manual way:
 ```bash
 cd server
 cp .env.example .env     # fill MONGODB_URI, JWT_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD, CLOUDINARY_*
